@@ -1,0 +1,50 @@
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  cursor: url('/public/images/strawberryPointer.svg'), auto;
+}
+
+.hover-cursor:hover, a:hover {
+  cursor: url('/public/images/strawberryDuckHover.svg'), pointer;
+}
+
+*:active, .hover-cursor:active {
+  cursor: url('/public/images/strawberryDuckClick.svg'), pointer;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+
+html, body, #root {
+  height: 100%;
+  margin: 0;
+  background-color: #333; 
+}
+
+ul {
+  list-style: none;
+  margin-left: 0;
+  padding-left: 0;
+}
+
+ul.dash-list li {
+  padding-left: 1em;
+  text-indent: -1em;
+}
+
+ul.dash-list li:before {
+  content: ">";
+  padding-right: 5px;
+}
+
+@keyframes float {
+  0% { transform: translateY(0); }
+  50% { transform: translateY(-8px); }
+  100% { transform: translateY(0); }
+}
