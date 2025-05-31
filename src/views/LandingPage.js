@@ -14,7 +14,6 @@ function LandingPage() {
     const [selectedSkill, setSelectedSkill] = useState(null);
 
     const handleSkillSelect = (skill) => {
-        console.log(skill)
         setSelectedSkill(skill);
     };
 
