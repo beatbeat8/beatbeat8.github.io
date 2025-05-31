@@ -160,14 +160,14 @@ function Navbar() {
             <Email />
           </IconButton>
 
-          <IconButton
+          {/* <IconButton
             href="/BeatriceGanResume.pdf"
             download="BeatriceGanResume.pdf"
             sx={{ color: "white" }}
             title="Download My Resume"
           >
             <Download />
-          </IconButton>
+          </IconButton> */}
         </Box>
       </Toolbar>
     </AppBar>
