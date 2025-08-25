@@ -22,7 +22,7 @@ const experiences = [
     picture: 'hitachiInterns.jpeg',
     pictureSubtitle: 'Hitachi Rail GTS Interns 2025',
     summary: 'Hitachi Rail GTS provides rail transport solutions, advanced technology and services for rail systems such as signalling solutions and software.',
-    responsibilities: 'Developed and maintained software applications for data visualisation and analysis applications.\nConducted testing and debugging of data parsing applications.',
+    responsibilities: 'Developed and maintained software applications for data visualisation and analysis.\nConducted testing and debugging of data parsing applications.',
     tech: 'Python \nBash \nJenkins \nAzure',
   },
   {
@@ -34,7 +34,7 @@ const experiences = [
     picture: 'kpmgFootball.jpeg',
     pictureSubtitle: 'KPMG Sports Day 2024',
     summary: 'KPMG is a global leader in audit, tax, and advisory services.',
-    responsibilities: 'Assisted in the research for improvement of tax technology solutions.\nCollaborated with the Tax team to enhance tax processes and systems.\nConducted chatbot testing to support decision-making.',
+    responsibilities: 'Interned with the Generative AI team, writing user stories (Jira) and testing tools created for the Tax department.\nConducted chatbot testing and collaborated with the tax team to enhance tax processes and systems.',
     tech: 'Testing \nChatbot',
   },
   {
@@ -44,7 +44,7 @@ const experiences = [
     period: 'Aug 23 - Aug 24',
     duration: '1 year',
     summary: 'Singapore Management University (SMU) offers TA and RA opportunities for students excelling in their studies.',
-    responsibilities: 'Assisted professors in class management.\nProvided support to students in understanding course materials.\nConducted survey research for Cooling Singapore, a government-backed project led by Professor Winston Chow. \nAnalysed climate data and provided visualisations and wind flow analysis for the project.',
+    responsibilities: 'Assisted professors in class management.\nProvided support to students in understanding course materials.\nConducted survey research for Cooling Singapore 2.0, a government-backed project led by Professor Winston Chow. \nAnalysed climate data and provided visualisations and wind flow analysis for the project.',
     tech: 'Python \nR',
   },
   {
@@ -153,9 +153,30 @@ export default function ExperienceSection({ data = experiences }) {
           <Typography variant="body2" sx={{ lineHeight: 1.6, fontSize: { xs: body1FontSizeXS, md: '1rem' } }}>
             Responsibilities:
             <ul className="dash-list">
-              {selectedExperience.responsibilities.split('\n').map((item, index) => (
-                <li key={index}>{item}</li>
-              ))}
+              {selectedExperience.responsibilities.split('\n').map((item, index) => {
+                const linkText = "Cooling Singapore 2.0";
+                const linkUrl = "https://cityperspectives.smu.edu.sg/article/cooling-singapore-20-step-towards-becoming-climate-resilient-and-regenerative-city"; 
+
+                if (item.includes(linkText)) {
+                  
+                  const [before, after] = item.split(linkText);
+                  return (  
+                    <li key={index}>
+                      {before}
+                      <a
+                        href={linkUrl}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        style={{ color: "cyan", textDecoration: "underline" }}
+                      >
+                        {linkText}
+                      </a>
+                      {after}
+                    </li>
+                  );
+                }
+                return <li key={index}>{item}</li>;
+              })}
             </ul>
           </Typography>
           <Typography variant="body2" sx={{ mt: 2, mb: 1 }}></Typography>

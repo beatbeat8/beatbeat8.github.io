@@ -10,10 +10,10 @@ function Navbar() {
   const navigate = useNavigate();
   const activeTab = location.pathname.split('/')[1] || 'about-me';
   const formatRoute = (label) => label.toLowerCase().replace(/\s+/g, '-');
-  const path = location.pathname.split('/')[1] || 'about-me';
+  const path = location.pathname.split('/') || 'about-me';
 
   const handleTabClick = (tabLabel) => {
-    navigate(`/${tabLabel.toLowerCase().replace(/\s+/g, '-')}`, { replace: true });
+    navigate(`/${formatRoute(tabLabel)}`, { replace: true });
   };
 
   const [hoveredTab, setHoveredTab] = useState("");
